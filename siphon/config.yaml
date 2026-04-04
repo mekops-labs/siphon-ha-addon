@@ -1,7 +1,7 @@
 name: "Siphon"
-version: "topic1"
+version: "0.4.0-rc1"
 slug: "siphon"
-description: "High-performance modular IoT data aggregator and dispatcher."
+description: "High-performance modular IoT data aggregator and dispatcher"
 url: "https://github.com/mekops-labs/siphon"
 arch:
   - aarch64
