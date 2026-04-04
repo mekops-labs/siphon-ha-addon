@@ -1,5 +1,5 @@
 name: "Siphon"
-version: "edit3"
+version: "topic1"
 slug: "siphon"
 description: "High-performance modular IoT data aggregator and dispatcher."
 url: "https://github.com/mekops-labs/siphon"
@@ -15,19 +15,19 @@ map:
     read_only: False
     path: /config
 
+services:
+  - mqtt:want
+
 ingress: true
 ingress_port: 8099
 panel_icon: "mdi:pipe"
 panel_title: "Siphon Config"
 
+
 options:
-  env_vars:
-    MQTT_USER: "admin"
-    MQTT_PASS: "password"
-    IOT_PLOTTER_API_KEY: "insert_key_here"
+  env_vars: []
 
 schema:
   env_vars:
-    MQTT_USER: str
-    MQTT_PASS: password
-    IOT_PLOTTER_API_KEY: password
+    - name: str
+      value: str
