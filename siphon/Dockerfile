@@ -5,8 +5,8 @@ FROM golang:1.25-alpine AS builder
 WORKDIR /build
 
 RUN apk add --no-cache git
-RUN git clone --depth 1 --branch ${BUILD_VERSION} https://github.com/mekops-labs/siphon.git .
-RUN go build -o /siphon ./cmd/siphon
+RUN git clone --depth 1 --branch ${BUILD_VERSION} https://github.com/mekops-labs/siphon.git
+RUN cd siphon && go build -o ../siphon ./cmd/siphon
 
 # --- Runtime Stage ---
 FROM $BUILD_FROM
