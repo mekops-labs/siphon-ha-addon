@@ -38,4 +38,4 @@ fi
 
 # 4. Start Siphon
 bashio::log.info "Launching Siphon..."
-exec /usr/bin/siphon "${CONFIG_FILE}"
+exec /usr/bin/siphon -editor-port 8099 "${CONFIG_FILE}"

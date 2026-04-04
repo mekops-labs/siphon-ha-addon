@@ -17,4 +17,6 @@ COPY --from=builder /siphon /usr/bin/siphon
 COPY run.sh /
 RUN chmod a+x /run.sh
 
+EXPOSE 8099
+
 CMD [ "/run.sh" ]
