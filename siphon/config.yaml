@@ -6,22 +6,24 @@ url: "https://github.com/mekops-labs/siphon"
 arch:
   - aarch64
   - amd64
-  - armv7
 startup: application
 boot: auto
 init: false
 
-# Mounts the HA /config folder so users can edit their config.yaml
 map:
-  - config:rw
+  - type: addon_config
+    read_only: False
+    path: /config
 
-# Default values populated in the UI when installed
 options:
   env_vars:
     MQTT_USER: "admin"
     MQTT_PASS: "password"
     IOT_PLOTTER_API_KEY: "insert_key_here"
 
-# Tells the HA UI to render env_vars as a key-value dictionary
 schema:
-  env_vars: dict
+  env_vars:
+    MQTT_USER: str
+    MQTT_PASS: password
+    IOT_PLOTTER_API_KEY: password
+

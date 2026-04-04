@@ -16,7 +16,7 @@ if bashio::config.has_value 'env_vars'; then
     done
 fi
 
-CONFIG_DIR="/config/siphon"
+CONFIG_DIR="/config"
 CONFIG_FILE="${CONFIG_DIR}/config.yaml"
 
 # 2. Ensure the configuration directory exists
