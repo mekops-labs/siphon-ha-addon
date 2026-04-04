@@ -18,14 +18,18 @@ fi
 
 # 2. --- Read remaining environment variables from HA UI ---
 if bashio::config.has_value 'env_vars'; then
-    bashio::log.info "Exporting custom environment variables from Add-on configuration..."
-    for key in $(bashio::jq "/data/options.json" ".env_vars | keys[]" -r); do
-        value=$(bashio::jq "/data/options.json" ".env_vars[\"${key}\"]" -r)
-        export "${key}"="${value}"
-    done
+    bashio::log.info "Exporting custom environment variables from configuration..."
+
+    # Safely iterate through the array of objects using jq
+    while IFS='=' read -r key value; do
+        if [ -n "${key}" ] && [ "${key}" != "null" ]; then
+            export "${key}"="${value}"
+            bashio::log.debug "Exported ENV: ${key}=***"
+        fi
+    done < <(bashio::jq "/data/options.json" ".env_vars[] | \"\(.name)=\(.value)\"" -r)
 fi
 
-CONFIG_DIR="/config/siphon"
+CONFIG_DIR="/config"
 CONFIG_FILE="${CONFIG_DIR}/config.yaml"
 
 # 3. Ensure the configuration directory exists
