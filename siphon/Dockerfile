@@ -8,7 +8,7 @@ ARG BUILD_VERSION=main
 
 RUN apk add --no-cache git
 RUN git clone --depth 1 --branch $BUILD_VERSION https://github.com/mekops-labs/siphon.git
-RUN cd siphon && go build -o /siphon ./cmd/siphon
+RUN cd siphon && go build -ldflags "-X main.version=$BUILD_VERSION" -o /siphon ./cmd/siphon
 
 # --- Runtime Stage ---
 FROM $BUILD_FROM
