@@ -1,5 +1,5 @@
 name: "Siphon"
-version: "0.4.0-rc3"
+version: "0.4.0"
 slug: "siphon"
 description: "High-performance modular IoT data aggregator and dispatcher"
 url: "https://github.com/mekops-labs/siphon"
@@ -18,11 +18,12 @@ map:
 services:
   - mqtt:want
 
+homeassistant_api: true
+
 ingress: true
 ingress_port: 8099
 panel_icon: "mdi:pipe"
 panel_title: "Siphon Config"
-
 
 options:
   env_vars: []
