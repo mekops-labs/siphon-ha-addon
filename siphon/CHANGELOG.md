@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 (2026-04-13)
+
+- add editor status line and display version
+- add hot reload support
+- changed the transform block to array (for proper transformation ordering)
+- added topic as selector for variables
+- added `rest` and `webhook` collectors
+- added `mqtt` and `hass` sinks
+- sinks: add Close() to interface to shutdown long-running collectors (like MQTT)
+
 ## 0.4.2 (2026-04-06)
 
 - fixed title parsing in ntfy and gotify sinks
