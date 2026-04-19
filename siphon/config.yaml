@@ -1,5 +1,5 @@
 name: "Siphon"
-version: 0.5.0
+version: 0.5.0-2
 slug: "siphon"
 description: "High-performance modular IoT data aggregator and dispatcher"
 url: "https://github.com/mekops-labs/siphon"
@@ -19,6 +19,12 @@ services:
   - mqtt:want
 
 homeassistant_api: true
+
+ports:
+  8080/tcp: 8080
+
+ports_description:
+  8080/tcp: "Siphon Webhook Collector"
 
 ingress: true
 ingress_port: 8099
