@@ -1,5 +1,5 @@
 name: "Siphon"
-version: 0.5.2
+version: 0.5.3
 slug: "siphon"
 description: "High-performance modular IoT data aggregator and dispatcher"
 url: "https://github.com/mekops-labs/siphon"
