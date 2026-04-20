@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.4 (2026-04-20)
+
+- bump Siphon to v0.5.4
+- hass sink: native **MQTT Device Trigger** (`device_automation`) support for stateless event pushing
+- hass sink: unified, data-driven topic handling for stateful entities (sensors, binary_sensors)
+
 ## 0.5.3 (2026-04-19)
 
 - fix webhook collector: duplicate payloads now return `409 Conflict` instead of `200 OK`
